@@ -10,19 +10,28 @@ def list_split(items, n):
 
 def getdata(name):
 
-
-
     headers = {
-        'Referer': 'https://github.com/'+ name,
-        'Sec-Ch-Ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Microsoft Edge";v="122"',
-        'Sec-Ch-Ua-Mobile': '?0',
-        'Sec-Ch-Ua-Platform': '"Windows"',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-origin',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0',
-        'X-Requested-With': 'XMLHttpRequest'
-    }
+                            'Accept': 'text/html',
+                            'Accept-Encoding': 'gzip, deflate, br, zstd',
+                            'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+                            'Cookie': '_device_id=5a60349d3702beaeb65a023dadaf504c; user_session=SUenDoAA7Z3_d_dj5gCJLPG9Q6nrWWXR3OH0KVV4pBrNfZOL; __Host-user_session_same_site=SUenDoAA7Z3_d_dj5gCJLPG9Q6nrWWXR3OH0KVV4pBrNfZOL; logged_in=yes; dotcom_user=Aixbox; _octo=GH1.1.383271031.1709946270; has_recent_activity=1; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; preferred_color_mode=light; tz=Asia%2FShanghai; _gh_sess=hzx34%2BUs4tt8aTrXmTo%2BrtiCS8sMRIud%2FXimgNOD9yB0fqI0wI4plfP5xfHerMawAkey4m6YHXr0IgiPwHfmRLm2nC5g%2Bua2vZ7tMvaSMtsqPKzu%2F0ygh8VDhALyHLwFpLAANxlGqkdh2UbhxomW6GIV%2F0oySIiUzmrKTTD2MddQ45wGnKF%2FMHtL0MGwOzB5ntXGoe%2B7YLS1%2BlxXit8f%2FgvOAxG%2B6MlN4uFJAbdY0yWAoQkE4GIEDMarqFcMGZiFQ0HGaIJf4RFVJXaD7Ws2%2BMsk%2BNoel%2BtVfssiNmom%2FmD6lmMphi2kUnl0FPNczki%2BxUuNblRJPiTe0HrYK85N4Wa3BjKadoDovY8uTv5f%2BLxFDeAr1hyQnViJqz%2BbAMrwJzftpY8tGuqQHnOSVdzNZxbpDdA%3D--637IKzGyDM0SgQFg--fEBA7kH53mtqbk57MXigEA%3D%3D',
+                            #'Cookie': 'logged_in=yes; dotcom_user=Aixbox;  has_recent_activity=1; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; preferred_color_mode=light; tz=Asia%2FShanghai;',
+                            'If-None-Match': 'W/"0675a6fab4344c254a79c3ed26b28505"',
+                            'Priority': 'u=1, i',
+                            'Referer': 'https://github.com/Aixbox',
+                            'Sec-Ch-Ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+                            'Sec-Ch-Ua-Mobile': '?0',
+                            'Sec-Ch-Ua-Platform': 'Windows',
+                            'Sec-Fetch-Dest': 'empty',
+                            'Sec-Fetch-Mode': 'cors',
+                            'Sec-Fetch-Site': 'same-origin',
+                            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+                            'X-Requested-With': 'XMLHttpRequest'
+
+}
+
+
+
     try:
         gitpage = requests.get(
             "https://github.com/" + name + "?action=show&controller=profiles&tab=contributions&user_id=" + name,
